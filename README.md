@@ -16,5 +16,6 @@ This is used for either creating a new bootable image, or installing the base Ka
    4. Reboot device and press delete key immediately.  That will open the boot menu.
       ![Boot Menu](https://user-images.githubusercontent.com/109390971/182856926-57a7c307-8a6e-4fc8-8a7b-4e2462c27899.png)
    5. Enter the full filename of firmware image
+
       ![v13](https://user-images.githubusercontent.com/109390971/182857128-4d81d0d9-243b-4c0d-82a9-5a685d7b1803.png)
    6. Wait for image to load.  Once the boot menu appears again, press 5 to Go to Linux
