@@ -1,22 +1,44 @@
-# moxainstallnewfirmware
+# moxasetupnewdevice
 
-This is used for either creating a new bootable image, or installing the base Kakwa image onto a UC-8200.  The only difference is what image you load into the Micro USB
+Setup for Moxa UC-8200 from base image to restore configuration
 
-1. Load Firmware onto MicroUSB
-   1. Plug Micro USB into PC
-   2. Take the *.img firmware file and save it on the USB
-      The name can be anything, but its best to keep it short as it will need to be typed later
-   3. Eject the Micro SUSB from PC and plug it into the front of the UC-8200
+1. SSH into device via ethernet using LAN 2 on device
+   - Use Putty software
+     - LAN 2 Default IP is `192.168.4.127`
+     - Use Port `22`
+   
+   ![lan2](https://user-images.githubusercontent.com/109390971/182858043-242a11da-11f1-40d3-b667-8326291d9cc2.png)
 
-2. Use a terminal named Tera Term for the next steps
-   1. Open Tera Term
-   2. Go to “Setup -> Serial Port” and change “Speed” to 115200 and change “Port” to your comm port.
-      ![Terra](https://user-images.githubusercontent.com/109390971/182856647-318e0f68-f66d-49a5-b1d4-41617d40bb67.png)
-   3. Plug serial cable into PC and into console port of device (Special cable needed, it comes with device)
-   4. Reboot device and press delete key immediately.  That will open the boot menu.
-      ![Boot Menu](https://user-images.githubusercontent.com/109390971/182856926-57a7c307-8a6e-4fc8-8a7b-4e2462c27899.png)      
-   5. Type `2` and press enter.
-   6. Enter the full filename of firmware image
-      ![image](https://user-images.githubusercontent.com/109390971/184702114-60554201-057d-4b3f-8bee-ac422b3c3c72.png)
+2. Update edge computer name
+   1. Type `sudo hostnamectl set-hostname KRxxxxxxx-EC01`
+      - Host Name has the LSD, eg Pad 03-29-064 is KR0329064-EC01
+   2. To verify type `hostnamectl`.
+   
+      ![image](https://user-images.githubusercontent.com/109390971/184705976-ea4972e0-168a-4675-94cf-193c780683d2.png)
 
-   7. Wait for image to load.  Once the boot menu appears again, press 5 to Go to Linux.  Wait for device to reboot twice.
+
+3. Configure Ignition Edge
+   1. Open web browser and type http://192.168.4.127:8088
+   2. Go to 'Config' on the left and login.
+      * This username and password are not the same as the moxa device.  These seperate credentials can also be found in secret server
+   3. Go to 'Licensing'.
+   4. Click on 'Activate'.
+   5. Enter Key and click submit.  Once accepted reboot the edge device and ensure everything is running as expected
+   6. Click on ![image](https://user-images.githubusercontent.com/109390971/184707110-e554a741-c8c3-4958-ab9f-74c268e426a4.png).
+   7. Chose file to restore.
+      - If this is a restore, leave all boxes unchecked.
+      - If this is restore is to create a new file, check "Override Gateway Name" and enter the new Gateway Name.
+      ![image](https://user-images.githubusercontent.com/109390971/184719517-3fc4fb82-ce6a-4e16-947e-47dba5cb804b.png)
+   8. After the gateway start again, go to ![image](https://user-images.githubusercontent.com/109390971/184720451-76b11573-01cb-4a73-a06d-6fd38f4c658c.png).
+   9. Scroll down to ![image](https://user-images.githubusercontent.com/109390971/184720530-11f9ba16-a480-4ee5-b6ef-3716e1fca56a.png).
+   10. Change project name to match LSD of site ![image](https://user-images.githubusercontent.com/109390971/184720624-b854fcf0-2f3a-4dd8-8884-036246aaf648.png)
+
+4. Update LAN 1 IP Address to match the site IP list
+   1. Go back to Putty and log into device as before
+   2. Type `sudo vi /etc/network/interfaces`
+      - To update file, press 'Insert' on keyboard to insert text rather than replace.
+   3. Edit file to remove the eth0 DHCP line, remove hash's from the 4 lines after and update address, netmask and gateway.
+   4. ![image](https://user-images.githubusercontent.com/109390971/184722809-bc90f63a-314e-4561-8333-5cca62653f20.png).
+   5. It should look like above and once done press 'ESC' key and then ':wq' to save and exit file
+   6. Type `sudo reboot` to reboot device
+   7. Connect PC to LAN 1, update PC network to be in same subnet as device and test IP settings.
