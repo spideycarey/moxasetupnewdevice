@@ -32,6 +32,8 @@ Setup for Moxa UC-8200 from base image to restore configuration
    8. After the gateway start again, go to ![image](https://user-images.githubusercontent.com/109390971/184720451-76b11573-01cb-4a73-a06d-6fd38f4c658c.png).
    9. Scroll down to ![image](https://user-images.githubusercontent.com/109390971/184720530-11f9ba16-a480-4ee5-b6ef-3716e1fca56a.png).
    10. Change project name to match LSD of site ![image](https://user-images.githubusercontent.com/109390971/184720624-b854fcf0-2f3a-4dd8-8884-036246aaf648.png)
+   11. ![image](https://user-images.githubusercontent.com/109390971/184791340-582a3a45-7f12-4ccd-aa8c-ba24f5cbf66a.png)
+
 
 4. Update LAN 1 IP Address to match the site IP list
    1. Go back to Putty and log into device as before
