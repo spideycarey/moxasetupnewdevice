@@ -12,10 +12,16 @@ Setup for Moxa UC-8200 from base image to restore configuration
 2. Update edge computer name
    1. Type `sudo hostnamectl set-hostname KRxxxxxxx-EC01`
       - Host Name has the LSD, eg Pad 03-29-064 is KR0329064-EC01
-   2. To verify type `hostnamectl`.
+   2. Type `sudo vi /etc/hosts`
+      - Edit file to be "127.0.0.1 localhost KRxxxxxxx-EC01" (But use the actual host name)
+   3. To verify type `hostnamectl`.
    
       ![image](https://user-images.githubusercontent.com/109390971/184705976-ea4972e0-168a-4675-94cf-193c780683d2.png)
-
+   4. The following commands are to clear/reset files for the edge device to use the new hostname
+      - Type `cd /usr/local/bin/ignition`
+      - Type `sudo ./ignition.sh stop`
+      - Type `sudo rm webserver/metro-keystore`
+      - Type `sudo rm data/.uuid`
 
 3. Configure Ignition Edge
    1. Open web browser and type http://192.168.4.127:8088
