@@ -25,6 +25,7 @@ Setup for Moxa UC-8200 from base image to restore configuration
       - Type `sudo ./ignition.sh stop`
       - Type `sudo rm webserver/metro-keystore`
       - Type `sudo rm data/.uuid`
+      - Then reboot device `Sudo Reboot`
 
 3. Configure Ignition Edge
    1. Open web browser and type http://192.168.4.127:8088
