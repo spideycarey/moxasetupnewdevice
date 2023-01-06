@@ -14,6 +14,8 @@ Setup for Moxa UC-8200 from base image to restore configuration
       - Host Name has the LSD, eg Pad 03-29-064 is KR0329064-EC01
    2. Type `sudo vi /etc/hosts`
       - Edit file to be "127.0.0.1 localhost KRxxxxxxx-EC01" (But use the actual host name)
+      - ![image](https://user-images.githubusercontent.com/109390971/211092041-e9df3e9e-de0c-4b49-8abc-38d081b15b9d.png)
+
    3. To verify type `hostnamectl`.
    
       ![image](https://user-images.githubusercontent.com/109390971/184705976-ea4972e0-168a-4675-94cf-193c780683d2.png)
