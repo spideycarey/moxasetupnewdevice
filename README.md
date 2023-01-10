@@ -44,7 +44,13 @@ Setup for Moxa UC-8200 from base image to restore configuration
    8. After the gateway start again, go to ![image](https://user-images.githubusercontent.com/109390971/184720451-76b11573-01cb-4a73-a06d-6fd38f4c658c.png).
    9. Scroll down to ![image](https://user-images.githubusercontent.com/109390971/184720530-11f9ba16-a480-4ee5-b6ef-3716e1fca56a.png).
    10. Change project name to match LSD of site ![image](https://user-images.githubusercontent.com/109390971/184720624-b854fcf0-2f3a-4dd8-8884-036246aaf648.png)
-   11. ![image](https://user-images.githubusercontent.com/109390971/184791340-582a3a45-7f12-4ccd-aa8c-ba24f5cbf66a.png)
+   11. Then on right hand side go to 'MQTT Transmission -> Settings'
+   12. ![image](https://user-images.githubusercontent.com/109390971/211668049-e85f0f17-de0a-4c3b-a8c1-12b514ac9724.png)
+   13. Then click on 'Transmitters' and 'edit' the transmitter in the list.
+   14. ![image](https://user-images.githubusercontent.com/109390971/184791340-582a3a45-7f12-4ccd-aa8c-ba24f5cbf66a.png)
+   15. Change Name
+   16. ![image](https://user-images.githubusercontent.com/109390971/211668327-5541b7d0-3aa9-4d14-b119-4075e7b0ac4a.png)
+
 
 
 4. Update LAN 1 IP Address to match the site IP list
