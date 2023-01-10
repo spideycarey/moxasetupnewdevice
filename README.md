@@ -47,7 +47,7 @@ Setup for Moxa UC-8200 from base image to restore configuration
    11. Then on right hand side go to 'MQTT Transmission -> Settings'
    12. ![image](https://user-images.githubusercontent.com/109390971/211668049-e85f0f17-de0a-4c3b-a8c1-12b514ac9724.png)
    13. Then click on 'Transmitters' and 'edit' the transmitter in the list.
-   14. ![image](https://user-images.githubusercontent.com/109390971/184791340-582a3a45-7f12-4ccd-aa8c-ba24f5cbf66a.png)
+   14. ![image](https://user-images.githubusercontent.com/109390971/211668524-cb7db553-b7b9-4b98-971a-1e9df5425cdd.png)
    15. Change Name
    16. ![image](https://user-images.githubusercontent.com/109390971/211668327-5541b7d0-3aa9-4d14-b119-4075e7b0ac4a.png)
 
