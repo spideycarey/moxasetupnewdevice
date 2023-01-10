@@ -17,7 +17,7 @@ Setup for Moxa UC-8200 from base image to restore configuration
       - Edit first line to be "127.0.0.1 localhost"
       - Edit second line to be "127.0.0.1 KRxxxxxxx-EC01"  (But use the actual host name)
       - ![image](https://user-images.githubusercontent.com/109390971/211092041-e9df3e9e-de0c-4b49-8abc-38d081b15b9d.png)
-      - To save press 'esc' then ':wq'
+      - To save press `esc` then `:wq`
 
    3. To verify type `hostnamectl`.
    
